@@ -1,15 +1,25 @@
 import React from "react";
-import styled from "@emotion/styled";
-
-const StyledTitle = styled.h1`
-  color: red;
-`;
+import { Global, css } from "@emotion/react";
+import {
+  StyledHeadline,
+  StyledSubtitle,
+  StyledBody,
+  StyledButtonText,
+} from "./components/shared-components";
 
 const App = () => {
   return (
-    <div>
-      <StyledTitle>Hola desde React</StyledTitle>
-    </div>
+    <>
+      <Global
+        styles={css`
+          * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+          }
+        `}
+      />
+    </>
   );
 };
 
