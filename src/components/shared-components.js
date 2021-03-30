@@ -17,7 +17,9 @@ export const StyledSubtitle = styled.h3`
 export const StyledBody = styled.p`
   font-family: "Poppins", sans-serif;
   font-style: normal;
+  color: ${(props) => `var(--${props.color ? props.color : "black-1"})`};
   font-weight: ${(props) => (props.black ? 900 : "normal")};
+  text-align: ${(props) => (props.align ? props.align : "start")};
   font-size: 14px;
   line-height: 24px;
 `;

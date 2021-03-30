@@ -9,6 +9,9 @@ module.exports = {
     filename: "bundle.js",
   },
   resolve: {
+    alias: {
+      "@img": path.resolve(__dirname, "src/assets/img"),
+    },
     extensions: [".js", ".jsx"],
   },
   mode: "development",
@@ -33,6 +36,10 @@ module.exports = {
       {
         test: /\.html/,
         use: ["html-loader"],
+      },
+      {
+        test: /\.(png|jpg|gif|jpeg)/,
+        type: "asset/resource",
       },
     ],
   },
