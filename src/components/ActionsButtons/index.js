@@ -7,23 +7,58 @@ import starDisabled from "../../assets/svg/star-disabled.svg";
 import favoriteDisabled from "../../assets/svg/favorite-disabled.svg";
 import energyDisabled from "../../assets/svg/energy-disabled.svg";
 
-const ActionsButtons = () => {
+import reload from "../../assets/svg/reload.svg";
+import close from "../../assets/svg/close.svg";
+import star from "../../assets/svg/star.svg";
+import favorite from "../../assets/svg/favorite.svg";
+import energy from "../../assets/svg/energy.svg";
+
+const Image = ({ src, disabledImg, disabled, ...props }) => (
+  <img src={disabled ? disabledImg : src} {...props} />
+);
+
+const ActionsButtons = ({ disabled }) => {
   return (
     <StyledActionContainer>
       <ActionButton small>
-        <img src={reloadDisabled} alt="Reload" />
+        <Image
+          disabled={disabled}
+          src={reload}
+          disabledImg={reloadDisabled}
+          alt="Reload"
+        />
       </ActionButton>
       <ActionButton>
-        <img src={closeDisabled} alt="Close" />
+        <Image
+          disabled={disabled}
+          src={close}
+          disabledImg={closeDisabled}
+          alt="Close"
+        />
       </ActionButton>
       <ActionButton small>
-        <img src={starDisabled} alt="Close" />
+        <Image
+          disabled={disabled}
+          src={star}
+          disabledImg={starDisabled}
+          alt="Star"
+        />
       </ActionButton>
       <ActionButton>
-        <img src={favoriteDisabled} alt="Close" />
+        <Image
+          disabled={disabled}
+          src={favorite}
+          disabledImg={favoriteDisabled}
+          alt="Favorite"
+        />
       </ActionButton>
       <ActionButton small>
-        <img src={energyDisabled} alt="Close" />
+        <Image
+          disabled={disabled}
+          src={energy}
+          disabledImg={energyDisabled}
+          alt="Energy"
+        />
       </ActionButton>
     </StyledActionContainer>
   );

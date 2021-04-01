@@ -11,7 +11,7 @@ const Home = () => {
       <Aside />
       <StyledContainer>
         <CircleLoading />
-        <ActionsButtons />
+        <ActionsButtons disabled />
       </StyledContainer>
     </MainContainer>
   );
