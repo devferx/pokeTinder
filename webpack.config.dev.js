@@ -11,6 +11,8 @@ module.exports = {
   resolve: {
     alias: {
       "@img": path.resolve(__dirname, "src/assets/img"),
+      "@svg": path.resolve(__dirname, "src/assets/svg"),
+      "@components": path.resolve(__dirname, "src/components"),
     },
     extensions: [".js", ".jsx"],
   },

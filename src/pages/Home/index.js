@@ -1,8 +1,9 @@
 import React from "react";
 
-import Aside from "../../components/Aside";
-import CircleLoading from "../../components/CircleLoading";
-import ActionsButtons from "../../components/ActionsButtons";
+import Aside from "@components/Aside";
+import CircleLoading from "@components/CircleLoading";
+import Card from "@components/Card";
+import ActionsButtons from "@components/ActionsButtons";
 import { MainContainer, StyledContainer } from "./styles";
 
 const Home = () => {
@@ -10,7 +11,8 @@ const Home = () => {
     <MainContainer>
       <Aside />
       <StyledContainer>
-        <CircleLoading />
+        {/* <CircleLoading /> */}
+        <Card />
         <ActionsButtons disabled />
       </StyledContainer>
     </MainContainer>
