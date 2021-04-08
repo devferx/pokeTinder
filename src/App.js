@@ -27,6 +27,7 @@ const App = () => {
           }
 
           body {
+            max-height: 100vh;
             background-color: var(--bg);
           }
         `}

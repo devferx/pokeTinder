@@ -1,3 +1,4 @@
+import { css } from "@emotion/react";
 import styled from "@emotion/styled";
 
 export const MainCardContainer = styled.section`
@@ -9,8 +10,13 @@ export const MainCardContainer = styled.section`
 `;
 
 export const StyledCard = styled.article`
+  display: flex;
+  flex-direction: column;
+
   width: 424px;
-  max-height: 100%;
+
+  max-height: 100vh;
+  z-index: 2;
 `;
 
 export const CardImage = styled.div`
@@ -19,7 +25,7 @@ export const CardImage = styled.div`
   border-radius: 8px;
   filter: drop-shadow(0px 4px 24px rgba(0, 0, 0, 0.25));
 
-  &::before {
+  &::after {
     content: "";
     display: block;
     position: absolute;
@@ -32,14 +38,17 @@ export const CardImage = styled.div`
       #000000 -6.28%,
       rgba(255, 255, 255, 0) 90%
     );
+    z-index: 8;
   }
 `;
 
 export const CardHeader = styled.div`
+  display: ${(p) => (p.open ? "none" : "block")};
   position: absolute;
   bottom: 55px;
   left: 16px;
   width: 50%;
+  z-index: 10;
 `;
 
 export const CardTitle = styled.h3`
@@ -57,7 +66,7 @@ export const CardInfoItem = styled.div`
   margin-top: 8px;
 `;
 
-export const CardIcon = styled.img`
+export const IconContainer = styled.div`
   margin-right: 8px;
 `;
 
@@ -76,4 +85,60 @@ export const CardImageCarousel = styled.div`
   }
 `;
 
-export const CardBody = styled.div``;
+export const CardBody = styled.div`
+  display: ${(p) => (p.open ? "block" : "none")};
+  flex: 1;
+  background-color: white;
+  overflow-y: scroll;
+  z-index: 5;
+`;
+
+export const CardBodyContainer = styled.div`
+  padding: 0 16px;
+`;
+
+export const CardBodyTitle = styled.h3`
+  font-family: "Poppins", sans-serif;
+  font-style: normal;
+  font-weight: 600;
+  font-size: 40px;
+  line-height: 48px;
+`;
+
+export const Divider = styled.div`
+  width: 100%;
+  height: 1px;
+  margin: 16px 0;
+  background-color: var(--grey-2);
+`;
+
+export const Skill = styled.span`
+  display: inline-block;
+  padding: 10px;
+  margin-right: 8px;
+  font-family: "Poppins", sans-serif;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 16px;
+  line-height: 16px;
+  color: var(--grey);
+  border: 1px solid ${(p) => (p.active ? "#FB3A78" : "var(--grey)")};
+  border-radius: 50px;
+  user-select: none;
+
+  ${(p) =>
+    p.active &&
+    css`
+      background: var(--primary-gradient);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    `}
+
+  &:last-child {
+    margin-right: 0px;
+  }
+`;
+
+export const BlankBox = styled.div`
+  height: 124px;
+`;

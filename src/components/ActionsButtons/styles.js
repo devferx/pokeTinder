@@ -6,6 +6,7 @@ export const StyledActionContainer = styled.div`
   align-items: center;
   bottom: 80px;
   left: 50%;
+  z-index: 5;
   transform: translateX(-50%);
 `;
 
