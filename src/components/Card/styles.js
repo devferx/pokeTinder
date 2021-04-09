@@ -29,7 +29,7 @@ export const CardImage = styled.div`
     content: "";
     display: block;
     position: absolute;
-    bottom: 15px;
+    bottom: 0px;
     left: 0;
     width: 100%;
     height: calc(30%);
@@ -45,7 +45,7 @@ export const CardImage = styled.div`
 export const CardHeader = styled.div`
   display: ${(p) => (p.open ? "none" : "block")};
   position: absolute;
-  bottom: 55px;
+  bottom: 16px;
   left: 16px;
   width: 50%;
   z-index: 10;
@@ -70,22 +70,7 @@ export const IconContainer = styled.div`
   margin-right: 8px;
 `;
 
-export const CardImageCarousel = styled.div`
-  display: flex;
-  justify-content: flex-start;
-  overflow-x: auto;
-  scroll-snap-type: x mandatory;
-
-  img {
-    flex: 0 0 100%;
-    width: 100%;
-    aspect-ratio: 235 / 272;
-    object-fit: cover;
-    scroll-snap-align: center;
-  }
-`;
-
-export const CardBody = styled.div`
+export const StyledCardBody = styled.div`
   display: ${(p) => (p.open ? "block" : "none")};
   flex: 1;
   background-color: white;
