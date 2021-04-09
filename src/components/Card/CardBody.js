@@ -1,14 +1,12 @@
 import React from "react";
 
 import { StyledBody } from "@components/shared-components";
-import Icons from "../icons/index";
+import CardInfo from "./CardInfo";
 
 import {
-  CardInfoItem,
   StyledCardBody,
   CardBodyContainer,
   CardBodyTitle,
-  IconContainer,
   Divider,
   Skill,
   BlankBox,
@@ -19,18 +17,12 @@ const CardBody = ({ open }) => {
     <StyledCardBody open={open}>
       <CardBodyContainer>
         <CardBodyTitle>Pikachu</CardBodyTitle>
-        <CardInfoItem>
-          <IconContainer>
-            <Icons.Region color="#5C5C5C" />
-          </IconContainer>
-          <StyledBody color="grey-1">Region de kanto</StyledBody>
-        </CardInfoItem>
-        <CardInfoItem>
-          <IconContainer>
-            <Icons.Global color="#5C5C5C" />
-          </IconContainer>
-          <StyledBody color="grey-1">8 kilómetros de distancia</StyledBody>
-        </CardInfoItem>
+        <CardInfo color="black" icon="Region" text="Region de kanto" />
+        <CardInfo
+          color="black"
+          icon="Global"
+          text="8 kilómetros de distancia"
+        />
         <div>
           <Skill active>Tierno</Skill>
           <Skill>Amigable</Skill>

@@ -2,8 +2,7 @@ import React from "react";
 import Stories from "react-insta-stories";
 
 import CardBody from "./CardBody";
-import { StyledBody } from "@components/shared-components";
-import Icons from "../icons/index";
+import CardInfo from "./CardInfo";
 
 import {
   MainCardContainer,
@@ -11,8 +10,6 @@ import {
   CardImage,
   CardHeader,
   CardTitle,
-  CardInfoItem,
-  IconContainer,
 } from "./styles";
 
 import pikachu1 from "@img/pikachu1.png";
@@ -28,19 +25,8 @@ const Card = ({ open = true }) => {
           <Stories stories={pictures} width={424} height={424} loop />
           <CardHeader>
             <CardTitle className="title">Pikachu</CardTitle>
-            <CardInfoItem>
-              <IconContainer>
-                <Icons.Region />
-              </IconContainer>
-              <StyledBody color="white">Region de kanto</StyledBody>
-            </CardInfoItem>
-
-            <CardInfoItem>
-              <IconContainer>
-                <Icons.Global />
-              </IconContainer>
-              <StyledBody color="white">8 kilómetros de distancia</StyledBody>
-            </CardInfoItem>
+            <CardInfo icon="Region" text="Region de kanto" />
+            <CardInfo icon="Global" text="8 kilómetros de distancia" />
           </CardHeader>
         </CardImage>
 
