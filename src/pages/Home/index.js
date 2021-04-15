@@ -1,4 +1,5 @@
-import React from "react";
+import React, { useEffect } from "react";
+import { useSelector, useDispatch } from "react-redux";
 
 import Aside from "@components/Aside";
 import CircleLoading from "@components/CircleLoading";
@@ -7,12 +8,32 @@ import ActionsButtons from "@components/ActionsButtons";
 import { MainContainer, StyledContainer } from "./styles";
 
 const Home = () => {
+  const pokemon = useSelector((state) => state.pokemonsCards[0]);
+  const loading = useSelector((state) => state.loading);
+  const dispatch = useDispatch();
+
+  useEffect(() => {
+    setTimeout(() => {
+      dispatch({ type: "LOADED_INFO" });
+    }, 3000);
+  }, []);
+
   return (
     <MainContainer>
       <Aside />
       <StyledContainer>
-        {/* <CircleLoading /> */}
-        <Card />
+        {loading ? (
+          <CircleLoading />
+        ) : (
+          <Card
+            name={pokemon.name}
+            desc={pokemon.description}
+            pictures={pokemon.pictures}
+            distance={pokemon.distance}
+            place={pokemon.place}
+            skills={pokemon.skills}
+          />
+        )}
         <ActionsButtons disabled />
       </StyledContainer>
     </MainContainer>

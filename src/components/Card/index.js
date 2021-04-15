@@ -1,5 +1,6 @@
 import React from "react";
 import Stories from "react-insta-stories";
+import PropTypes from "prop-types";
 
 import CardBody from "./CardBody";
 import CardInfo from "./CardInfo";
@@ -12,28 +13,46 @@ import {
   CardTitle,
 } from "./styles";
 
-import pikachu1 from "@img/pikachu1.png";
-import pikachu2 from "@img/pikachu2.png";
-import pikachu3 from "@img/pikachu3.png";
-
-const Card = ({ open = true }) => {
-  const pictures = [pikachu1, pikachu2, pikachu3];
+const Card = ({ name, desc, pictures, place, distance, skills, open }) => {
   return (
     <MainCardContainer>
       <StyledCard>
         <CardImage>
           <Stories stories={pictures} width={424} height={424} loop />
           <CardHeader>
-            <CardTitle className="title">Pikachu</CardTitle>
-            <CardInfo icon="Region" text="Region de kanto" />
-            <CardInfo icon="Global" text="8 kilómetros de distancia" />
+            <CardTitle className="title">{name}</CardTitle>
+            <CardInfo icon="Region" text={place} />
+            <CardInfo
+              icon="Global"
+              text={`${distance} kilómetros de distancia`}
+            />
           </CardHeader>
         </CardImage>
 
-        <CardBody open={open} />
+        <CardBody
+          desc={desc}
+          place={place}
+          distance={distance}
+          open={open}
+          skills={skills}
+        />
       </StyledCard>
     </MainCardContainer>
   );
+};
+
+Card.propTypes = {
+  name: PropTypes.string,
+  desc: PropTypes.string,
+  pictures: PropTypes.arrayOf(PropTypes.any),
+  skills: PropTypes.arrayOf(PropTypes.string),
+  place: PropTypes.string,
+  distance: PropTypes.number,
+  open: PropTypes.bool,
+};
+
+Card.defaultProps = {
+  open: true,
 };
 
 export default Card;
