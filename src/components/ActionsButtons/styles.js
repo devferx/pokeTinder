@@ -11,7 +11,7 @@ export const StyledActionContainer = styled.div`
 `;
 
 export const ActionButton = styled.button`
-  display: grid;
+  display: ${(p) => (p.disabled ? "none" : "grid")};
   place-items: center;
   box-sizing: border-box;
   width: ${(props) => (props.small ? "70px" : "91px")};

@@ -3,6 +3,7 @@ function reducer(state, action) {
     case "LOADED_INFO":
       return {
         ...state,
+        activeBottomBar: true,
         loading: false,
       };
     default:

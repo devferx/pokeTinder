@@ -17,10 +17,10 @@ const Image = ({ src, disabledImg, disabled, ...props }) => (
   <img src={disabled ? disabledImg : src} {...props} />
 );
 
-const ActionsButtons = ({ disabled }) => {
+const ActionsButtons = ({ disabled, openCard }) => {
   return (
     <StyledActionContainer>
-      <ActionButton small>
+      <ActionButton disabled={openCard} small>
         <Image
           disabled={disabled}
           src={reload}
@@ -52,7 +52,7 @@ const ActionsButtons = ({ disabled }) => {
           alt="Favorite"
         />
       </ActionButton>
-      <ActionButton small>
+      <ActionButton disabled={openCard} small>
         <Image
           disabled={disabled}
           src={energy}
