@@ -28,14 +28,17 @@ const Card = ({ name, desc, pictures, place, distance, skills, open }) => {
       <StyledCard>
         <CardImage>
           <Stories stories={pictures} width={424} height={424} loop />
-          <CardHeader>
-            <CardTitle className="title">{name}</CardTitle>
-            <CardInfo icon="Region" text={place} />
-            <CardInfo
-              icon="Global"
-              text={`${distance} kilómetros de distancia`}
-            />
-          </CardHeader>
+          {!cardIsOpen && (
+            <CardHeader>
+              <CardTitle className="title">{name}</CardTitle>
+              <CardInfo icon="Region" text={place} />
+              <CardInfo
+                icon="Global"
+                text={`${distance} kilómetros de distancia`}
+              />
+            </CardHeader>
+          )}
+
           {!cardIsOpen && (
             <BtnInfoIcon onClick={() => dispatch({ type: "OPEN_CARD" })}>
               <img src={infoIcon} alt="More Info" />
