@@ -6,6 +6,16 @@ function reducer(state, action) {
         activeBottomBar: true,
         loading: false,
       };
+    case "OPEN_CARD":
+      return {
+        ...state,
+        cardIsOpen: true,
+      };
+    case "CLOSE_CARD":
+      return {
+        ...state,
+        cardIsOpen: false,
+      };
     default:
       return state;
   }

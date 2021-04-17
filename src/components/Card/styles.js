@@ -10,11 +10,8 @@ export const MainCardContainer = styled.section`
 `;
 
 export const StyledCard = styled.article`
-  display: flex;
-  flex-direction: column;
-
+  position: relative;
   width: 424px;
-
   max-height: 100vh;
   z-index: 2;
 `;
@@ -70,12 +67,30 @@ export const IconContainer = styled.div`
   margin-right: 8px;
 `;
 
+export const BtnInfoIcon = styled.button`
+  position: absolute;
+  bottom: 15px;
+  right: 15px;
+  border: none;
+  background: transparent;
+  z-index: 99999;
+`;
+
+export const BtnClose = styled.button`
+  position: absolute;
+  top: 392px;
+  right: 15px;
+  border: none;
+  background: transparent;
+  z-index: 9999999;
+`;
+
 export const StyledCardBody = styled.div`
+  position: relative;
   display: ${(p) => (p.open ? "block" : "none")};
   flex: 1;
   background-color: white;
   overflow-y: scroll;
-  z-index: 5;
 `;
 
 export const CardBodyContainer = styled.div`

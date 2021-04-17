@@ -10,6 +10,7 @@ import { MainContainer, StyledContainer } from "./styles";
 const Home = () => {
   const pokemon = useSelector((state) => state.pokemonsCards[0]);
   const loading = useSelector((state) => state.loading);
+  const cardIsOpen = useSelector((state) => state.cardIsOpen);
   const activeBottomBar = useSelector((state) => state.activeBottomBar);
   const dispatch = useDispatch();
 
@@ -35,7 +36,7 @@ const Home = () => {
             skills={pokemon.skills}
           />
         )}
-        <ActionsButtons openCard={false} disabled={!activeBottomBar} />
+        <ActionsButtons openCard={cardIsOpen} disabled={!activeBottomBar} />
       </StyledContainer>
     </MainContainer>
   );
