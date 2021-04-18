@@ -5,13 +5,15 @@
   "author": "Fernando Quinteros Gutierrez <ferkki@hotmail.com> (https://twitter.com/devferx)",
   "license": "MIT",
   "scripts": {
-    "dev": "webpack serve --config webpack.config.dev.js"
+    "dev": "webpack serve --config webpack.config.dev.js",
+    "build": "webpack --config ./webpack.config.js"
   },
   "devDependencies": {
     "@babel/core": "^7.13.14",
     "@babel/preset-env": "^7.13.12",
     "@babel/preset-react": "^7.13.13",
     "babel-loader": "^8.2.2",
+    "clean-webpack-plugin": "^4.0.0-alpha.0",
     "css-loader": "^5.2.0",
     "html-loader": "^2.1.2",
     "html-webpack-plugin": "^5.3.1",
