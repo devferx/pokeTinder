@@ -8,7 +8,8 @@ import ActionsButtons from "@components/ActionsButtons";
 import { MainContainer, StyledContainer } from "./styles";
 
 const Home = () => {
-  const pokemon = useSelector((state) => state.pokemonsCards[2]);
+  const pokemons = useSelector((state) => state.pokemonsCards);
+  const currentCard = useSelector((state) => state.currentCard);
   const loading = useSelector((state) => state.loading);
   const cardIsOpen = useSelector((state) => state.cardIsOpen);
   const activeBottomBar = useSelector((state) => state.activeBottomBar);
@@ -24,18 +25,7 @@ const Home = () => {
     <MainContainer>
       <Aside />
       <StyledContainer>
-        {loading ? (
-          <CircleLoading />
-        ) : (
-          <Card
-            name={pokemon.name}
-            desc={pokemon.description}
-            pictures={pokemon.pictures}
-            distance={pokemon.distance}
-            place={pokemon.place}
-            skills={pokemon.skills}
-          />
-        )}
+        {loading ? <CircleLoading /> : <Card {...pokemons[currentCard]} />}
         <ActionsButtons openCard={cardIsOpen} disabled={!activeBottomBar} />
       </StyledContainer>
     </MainContainer>

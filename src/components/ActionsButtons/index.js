@@ -1,4 +1,5 @@
 import React from "react";
+import { useDispatch } from "react-redux";
 import { StyledActionContainer, ActionButton } from "./styles";
 
 import reloadDisabled from "../../assets/svg/reload-disabled.svg";
@@ -18,6 +19,8 @@ const Image = ({ src, disabledImg, disabled, ...props }) => (
 );
 
 const ActionsButtons = ({ disabled, openCard }) => {
+  const dispatch = useDispatch();
+
   return (
     <StyledActionContainer>
       <ActionButton disabled={openCard} small>
@@ -28,7 +31,7 @@ const ActionsButtons = ({ disabled, openCard }) => {
           alt="Reload"
         />
       </ActionButton>
-      <ActionButton>
+      <ActionButton onClick={() => dispatch({ type: "NEXT_CARD" })}>
         <Image
           disabled={disabled}
           src={close}
@@ -44,7 +47,7 @@ const ActionsButtons = ({ disabled, openCard }) => {
           alt="Star"
         />
       </ActionButton>
-      <ActionButton>
+      <ActionButton onClick={() => dispatch({ type: "NEXT_CARD" })}>
         <Image
           disabled={disabled}
           src={favorite}

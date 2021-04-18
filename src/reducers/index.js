@@ -16,6 +16,18 @@ function reducer(state, action) {
         ...state,
         cardIsOpen: false,
       };
+    case "NEXT_CARD":
+      if (state.currentCard + 1 >= state.pokemonsCards.length) {
+        return {
+          ...state,
+          currentCard: 0,
+        };
+      } else {
+        return {
+          ...state,
+          currentCard: state.currentCard + 1,
+        };
+      }
     default:
       return state;
   }

@@ -15,7 +15,7 @@ export const initialState = {
   pokemonsCards: [
     {
       name: "Pikachu",
-      description:
+      desc:
         "Soy un Pokémon muy afectuoso, me encanta jugar, divertirme y sobre todo comer mucho. Cuando entro en confianza me gusta recibir lindos abrazos y caricias; al punto que mi amor evoluciona y puede llegar a ser muy electrizante. Estoy dispuesto a conocerte y capturar momentos muy divertidos juntos.",
       distance: 8,
       place: "Region de kanto",
@@ -24,7 +24,7 @@ export const initialState = {
     },
     {
       name: "Lucario",
-      description:
+      desc:
         "Tengo una especial habilidad relacionada con el aura, que me permite entender y asimilar los sentimientos y pensamientos de los demás Pokémon. Poseo un gran sentido de justicia y como buen luchador, me caracteriza la velocidad, agilidad y flexibilidad. Soy de carácter duro y serio, pero me gustaría conocer al Pokémon que tenga un aura compatible con el mío.",
       distance: 16,
       place: "Region de Sinnoh",
@@ -33,7 +33,7 @@ export const initialState = {
     },
     {
       name: "Oshawott",
-      description:
+      desc:
         "Me considero un Pokémon capaz de superar situaciones conflictivas para mí, lo cual me ayuda a ser muy fuerte y valiente. Soy un gran amigo, que demuestra su espíritu de corazón leal y cuando me enamoro, puedo llegar a hacer cualquier cosa, poniendo a prueba todo mi cariño.",
       distance: 24,
       place: "Region de Teselia ",
@@ -41,6 +41,7 @@ export const initialState = {
       skills: ["Tierno", "Adorable", "Divertido"],
     },
   ],
+  currentCard: 0,
   activeBottomBar: false,
   cardIsOpen: false,
   loading: true,
