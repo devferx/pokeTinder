@@ -4,6 +4,7 @@ import styled from "@emotion/styled";
 export const MainCardContainer = styled.section`
   display: flex;
   justify-content: center;
+  align-items: center;
   width: 100%;
   height: 100%;
   padding: 20px 0 40px 0;
@@ -12,6 +13,7 @@ export const MainCardContainer = styled.section`
 export const StyledCard = styled.article`
   position: relative;
   width: 424px;
+  height: min-content;
   max-height: 100vh;
   z-index: 2;
 `;
