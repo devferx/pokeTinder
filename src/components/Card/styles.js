@@ -46,7 +46,7 @@ export const CardHeader = styled.div`
   position: absolute;
   bottom: 16px;
   left: 16px;
-  width: 50%;
+  width: 100%;
   z-index: 10;
 `;
 

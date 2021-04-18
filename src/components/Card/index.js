@@ -53,6 +53,7 @@ const Card = ({ name, desc, pictures, place, distance, skills, open }) => {
         )}
 
         <CardBody
+          name={name}
           open={cardIsOpen}
           desc={desc}
           place={place}

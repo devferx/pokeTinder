@@ -13,10 +13,10 @@ import {
   BlankBox,
 } from "./styles";
 
-const CardBody = ({ place, distance, skills, desc, open }) => (
+const CardBody = ({ name, place, distance, skills, desc, open }) => (
   <StyledCardBody open={open}>
     <CardBodyContainer>
-      <CardBodyTitle>Pikachu</CardBodyTitle>
+      <CardBodyTitle>{name}</CardBodyTitle>
       <CardInfo color="black" icon="Region" text={place} />
       <CardInfo
         color="black"
@@ -41,6 +41,7 @@ const CardBody = ({ place, distance, skills, desc, open }) => (
 );
 
 CardBody.propTypes = {
+  name: PropTypes.string,
   desc: PropTypes.string,
   open: PropTypes.bool,
   skills: PropTypes.arrayOf(PropTypes.string),

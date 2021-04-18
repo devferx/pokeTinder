@@ -8,7 +8,7 @@ import ActionsButtons from "@components/ActionsButtons";
 import { MainContainer, StyledContainer } from "./styles";
 
 const Home = () => {
-  const pokemon = useSelector((state) => state.pokemonsCards[0]);
+  const pokemon = useSelector((state) => state.pokemonsCards[2]);
   const loading = useSelector((state) => state.loading);
   const cardIsOpen = useSelector((state) => state.cardIsOpen);
   const activeBottomBar = useSelector((state) => state.activeBottomBar);
